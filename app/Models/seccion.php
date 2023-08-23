@@ -5,16 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class seccion extends Model
+class Seccion extends Model
 {
     use HasFactory;
-// relacion de uno a muchos
-    public function temas(){
-        return $this->hasMany('App\Models\tema');
-    }
 
-// relacion muchos a muchos
     public function usuarios(){
-        return $this->belongsToMany(usuario::class, 'seccion_usuario');
+        return $this->belongsToMany(Usuario::class, 'seccion_usuario');
     }
 }
